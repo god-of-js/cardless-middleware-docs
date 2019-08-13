@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>API Calls | Cardless Middle-ware API</title>
+    <meta name="description" content="API docs">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.5203916d.css" as="style"><link rel="preload" href="/assets/js/app.d54f355b.js" as="script"><link rel="preload" href="/assets/js/2.91ba3f3e.js" as="script"><link rel="preload" href="/assets/js/7.0378b08c.js" as="script"><link rel="prefetch" href="/assets/js/10.f2a67569.js"><link rel="prefetch" href="/assets/js/11.06d796f3.js"><link rel="prefetch" href="/assets/js/12.24b0d81f.js"><link rel="prefetch" href="/assets/js/13.08d06585.js"><link rel="prefetch" href="/assets/js/14.086ebfd3.js"><link rel="prefetch" href="/assets/js/3.01192493.js"><link rel="prefetch" href="/assets/js/4.621d4372.js"><link rel="prefetch" href="/assets/js/5.ae83f679.js"><link rel="prefetch" href="/assets/js/6.d815e85f.js"><link rel="prefetch" href="/assets/js/8.677e889d.js"><link rel="prefetch" href="/assets/js/9.9f11c646.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5203916d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Cardless Middle-ware API</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/overview/" class="sidebar-link">Overview</a></li><li><a href="/getting-started/" class="sidebar-link">Getting Started</a></li><li><a href="/api/" class="active sidebar-link">API Calls</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/api/#api-calls" class="sidebar-link">API Calls</a></li><li class="sidebar-sub-header"><a href="/api/#post-voucher-store" class="sidebar-link">POST    /voucher/store</a></li><li class="sidebar-sub-header"><a href="/api/#_200-success" class="sidebar-link">200 success</a></li><li class="sidebar-sub-header"><a href="/api/#_400-failure" class="sidebar-link">400 failure</a></li><li class="sidebar-sub-header"><a href="/api/#put-voucher-use" class="sidebar-link">PUT    /voucher/use</a></li><li class="sidebar-sub-header"><a href="/api/#_200-success-2" class="sidebar-link">200 success</a></li><li class="sidebar-sub-header"><a href="/api/#_400-failure-2" class="sidebar-link">400 failure</a></li></ul></li><li><a href="/field-reference/" class="sidebar-link">Field Reference</a></li><li><a href="/security/" class="sidebar-link">Security Specification And Encryption</a></li><li><a href="/contact/" class="sidebar-link">Contact Us</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="api-calls"><a href="#api-calls" aria-hidden="true" class="header-anchor">#</a> API Calls</h2> <p>Explore the API here hands-on <br>
+This API supports a data response in JSON format <br>
+Need a little help? Read our <a href="/getting-started">getting started</a> to learn about using this API<br></p><hr><p></p> <h2 id="post-voucher-store"><a href="#post-voucher-store" aria-hidden="true" class="header-anchor">#</a> POST    /voucher/store</h2> <table><thead><tr><th>HEAD PARAMS</th> <th>DESCRIPTION</th></tr></thead> <tbody><tr><td>Authorization</td> <td>Unique Key Provided by <b>CARDLESS</b> (e.g Bearer NIBBS_********)</td></tr></tbody></table> <table><thead><tr><th>BODY PARAMS</th> <th>DESCRIPTION</th></tr></thead> <tbody><tr><td>voucher_code</td> <td>The voucher code sent to the user <div style="color:red;"> Required* </div></td></tr> <tr><td>customer_email</td> <td>Email of the customer who requested the voucher <div style="color:red;"> Required* </div></td></tr> <tr><td>phonenumber</td> <td>Phone number of the customer who requested the voucher<div style="color:red;">Required*</div></td></tr> <tr><td>name</td> <td>Name of the customer who requested the voucher <div style="color:red;"> Required* </div></td></tr> <tr><td>amount</td> <td>Amount value of the voucher <div style="color:red;"> Required* </div></td></tr> <tr><td>createdAt</td> <td>Time at which voucher was created</td></tr></tbody></table> <h2 id="_200-success"><a href="#_200-success" aria-hidden="true" class="header-anchor">#</a> 200 success</h2> <div class="language- extra-class"><pre class="language-text"><code>{
+   status: true,
+   message: &quot;Voucher Saved Successfully&quot;,
+   data: {
+       &quot;amount&quot;: 5000,
+       &quot;createdAt&quot;: 2019-07-15t02:54:48728z,
+       &quot;voucher_code&quot;: &quot;190xxxxxxxx&quot;,
+       'customer': {
+           &quot;email&quot;: &quot;richardgriffon@example.com&quot;,
+           &quot;name&quot;: &quot;richard griffon&quot;
+       }  
+}
+
+</code></pre></div><h2 id="_400-failure"><a href="#_400-failure" aria-hidden="true" class="header-anchor">#</a> 400 failure</h2> <div class="language- extra-class"><pre class="language-text"><code>{
+   status: false,
+   message: error
+}
+</code></pre></div><h2 id="put-voucher-use"><a href="#put-voucher-use" aria-hidden="true" class="header-anchor">#</a> PUT    /voucher/use</h2> <table><thead><tr><th>HEAD PARAMS</th> <th>DESCRIPTION</th></tr></thead> <tbody><tr><td>Authorization</td> <td>Unique Key Provided by <b>CARDLESS</b> (e.g Bearer NAFTAPOS********)</td></tr></tbody></table> <table><thead><tr><th>BODY PARAMS</th> <th>DESCRIPTION</th></tr></thead> <tbody><tr><td>voucher_code</td> <td>The voucher code sent to the user <div style="color:red;"> Required* </div></td></tr> <tr><td>amount</td> <td>Amount value of the voucher <div style="color:red;"> Required* </div></td></tr></tbody></table> <h2 id="_200-success-2"><a href="#_200-success-2" aria-hidden="true" class="header-anchor">#</a> 200 success</h2> <div class="language- extra-class"><pre class="language-text"><code>{
+   status: true,
+   message: &quot;Voucher payment transacted successfully&quot;,
+   data: {
+       &quot;amount&quot;: 5000,
+       &quot;createdAt&quot;: 2019-07-15t02:54:48728z,
+       &quot;voucher_code&quot;: &quot;190xxxxxxxx&quot;,
+       'customer': {
+           &quot;email&quot;: &quot;richardgriffon@example.com&quot;,
+           &quot;name&quot;: &quot;richard griffon&quot;
+       }  
+}
+
+</code></pre></div><h2 id="_400-failure-2"><a href="#_400-failure-2" aria-hidden="true" class="header-anchor">#</a> 400 failure</h2> <div class="language- extra-class"><pre class="language-text"><code>{
+   status: false,
+   message: error
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/getting-started/" class="prev">
+          Getting Started
+        </a></span> <span class="next"><a href="/field-reference/">
+          Field Reference
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d54f355b.js" defer></script><script src="/assets/js/2.91ba3f3e.js" defer></script><script src="/assets/js/7.0378b08c.js" defer></script>
+  </body>
+</html>

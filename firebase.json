@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "cardless-docs",
+    "public": "docs/.vuepress/dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
